@@ -1,0 +1,86 @@
+{
+    "elements": [
+        {
+            "type": "Label",
+            "label": "Fenstersensoren"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "Sensor1ID",
+            "caption": "Fenstersensor (Offen)"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "Sensor2ID",
+            "caption": "Fenstersensor (Gekippt)"
+        },
+        {
+            "type": "Label",
+            "label": "Raffstore"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "RaffstoreStatusID",
+            "caption": "Raffstore Status (Position)"
+        },
+        {
+            "type": "Label",
+            "label": "Wetterbedingungen"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "RainStatusID",
+            "caption": "Regenstatus"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "WindSpeedID",
+            "caption": "Windgeschwindigkeit"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "WindThreshold",
+            "caption": "Windschwellenwert (m/s)"
+        },
+        {
+            "type": "Label",
+            "label": "Alexa"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "AlexaID",
+            "caption": "Alexa Gerät"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "WindowName",
+            "caption": "Fenstername"
+        },
+        {
+            "type": "Label",
+            "label": "Hinweise"
+        },
+        {
+            "type": "Label",
+            "label": "Bitte stellen Sie sicher, dass alle ausgewählten Variablen vom richtigen Typ sind."
+        }
+    ],
+    "actions": [],
+    "status": [
+        {
+            "code": 101,
+            "icon": "active",
+            "caption": "Instanz wird erstellt"
+        },
+        {
+            "code": 102,
+            "icon": "inactive",
+            "caption": "Instanz ist inaktiv"
+        },
+        {
+            "code": 104,
+            "icon": "inactive",
+            "caption": "Instanz wird gelöscht"
+        }
+    ]
+}
