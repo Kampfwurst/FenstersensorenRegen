@@ -1,13 +1,25 @@
 {
     "id": "{EAD71974-1EF0-512D-5079-371D0C6C934F}",
-    "author": "Christoph Boss",
-    "name": "Fenster_Regen",
-    "url": "https://github.com/Kampfwurst/FenstersensorenRegen",
-    "compatibility": {
-        "version": "4.2",
-        "date": 1491343200
-    },
+    "name": "Window Sensor Module",
+    "author": "Your Name",
+    "url": "https://github.com/your-repository-url",
     "version": "1.0",
     "build": 0,
-    "date": 0
+    "date": 1690051200,
+    "compatibility": {
+        "version": "5.0"
+    },
+    "license": "MIT",
+    "modules": [
+        {
+            "id": "{B8E1D1FD-AC0D-946B-2EAE-0C6BE3B8FDFC}",
+            "name": "Window Sensor",
+            "namespace": "WindowSensor",
+            "url": "https://github.com/your-repository-url",
+            "compatibility": {
+                "version": "5.0"
+            },
+            "license": "MIT"
+        }
+    ]
 }
