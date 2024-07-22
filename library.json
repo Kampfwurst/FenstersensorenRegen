@@ -1,9 +1,9 @@
 {
     "id": "{EAD71974-1EF0-512D-5079-371D0C6C934F}",
     "name": "Window Sensor Module",
-    "author": "Your Name",
+    "author": "Christoph Boss",
     "url": "https://github.com/your-repository-url",
-    "version": "1.0",
+    "version": "1.1",
     "build": 0,
     "date": 1690051200,
     "compatibility": {
