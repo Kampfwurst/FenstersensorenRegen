@@ -31,7 +31,7 @@ class WindowSensor extends IPSModule {
 
         // Variablen registrieren
         $this->RegisterVariableInteger("WindowStatus", "Fensterstatus", "WS.Status", 0);
-        $this->RegisterVariableInteger("RaffstorePosition", "Raffstore Position", "~Intensity.100", 1);
+        $this->RegisterVariableFloat("RaffstorePosition", "Raffstore Position", "~Intensity.100", 1);
         $this->RegisterVariableFloat("WindSpeed", "Windgeschwindigkeit", "WS.WindSpeed", 2);
         $this->RegisterVariableBoolean("IsRaining", "Regenstatus", "~Switch", 3);
 
@@ -88,6 +88,15 @@ class WindowSensor extends IPSModule {
         // Fensterstatus speichern
         SetValueInteger($this->GetIDForIdent("WindowStatus"), $windowStatus);
 
+        // Raffstore Position speichern
+        SetValueFloat($this->GetIDForIdent("RaffstorePosition"), $raffstorePosition);
+
+        // Windgeschwindigkeit speichern
+        SetValueFloat($this->GetIDForIdent("WindSpeed"), $windSpeed);
+
+        // Regenstatus speichern
+        SetValueBoolean($this->GetIDForIdent("IsRaining"), $isRaining);
+
         // Bedingung für Alexa-Warnung prüfen
         if ($isRaining && $windowStatus > 0 && $raffstorePosition < 100) {
             $message = "Achtung. Das Fenster $windowName ist ";
@@ -108,7 +117,7 @@ class WindowSensor extends IPSModule {
 
     public function CloseRaffstore() {
         $raffstoreStatusID = $this->ReadPropertyInteger("RaffstoreStatusID");
-        SetValueInteger($raffstoreStatusID, 100);
+        RequestAction($raffstoreStatusID, 100); // Raffstore schließen
 
         $alexaID = $this->ReadPropertyInteger("AlexaID");
         $message = "Der Raffstore wurde wegen starkem Wind und Regen geschlossen.";
