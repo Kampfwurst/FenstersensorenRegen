@@ -46,6 +46,18 @@ class WindowSensor extends IPSModule {
 
         // Timer setzen
         $this->SetTimerInterval("CheckConditions", 60000); // Jede Minute
+
+        // Überprüfen Sie, ob alle benötigten IDs konfiguriert sind
+        if ($this->ReadPropertyInteger("Sensor1ID") == 0 ||
+            $this->ReadPropertyInteger("Sensor2ID") == 0 ||
+            $this->ReadPropertyInteger("RainStatusID") == 0 ||
+            $this->ReadPropertyInteger("RaffstoreStatusID") == 0 ||
+            $this->ReadPropertyInteger("WindSpeedID") == 0 ||
+            $this->ReadPropertyInteger("AlexaID") == 0) {
+            $this->SetStatus(104); // Instanz ist inaktiv (fehlerhafte Konfiguration)
+        } else {
+            $this->SetStatus(102); // Instanz ist aktiv
+        }
     }
 
     public function CheckConditions() {
