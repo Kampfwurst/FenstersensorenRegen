@@ -24,15 +24,15 @@ class WindowSensor extends IPSModule {
             IPS_SetVariableProfileAssociation("WS.Status", 2, "Offen", "", 0xFF0000);
         }
 
-        if (!IPS_VariableProfileExists("~WindSpeed")) {
-            IPS_CreateVariableProfile("~WindSpeed", 2); // Profile for Wind Speed, type float
-            IPS_SetVariableProfileText("~WindSpeed", "", " m/s");
+        if (!IPS_VariableProfileExists("WS.WindSpeed")) {
+            IPS_CreateVariableProfile("WS.WindSpeed", 2); // Profil für Windgeschwindigkeit, Typ Float
+            IPS_SetVariableProfileText("WS.WindSpeed", "", " m/s");
         }
 
         // Variablen registrieren
         $this->RegisterVariableInteger("WindowStatus", "Fensterstatus", "WS.Status", 0);
         $this->RegisterVariableFloat("RaffstorePosition", "Raffstore Position", "~Intensity.100", 1);
-        $this->RegisterVariableFloat("WindSpeed", "Windgeschwindigkeit", "~WindSpeed", 2);
+        $this->RegisterVariableFloat("WindSpeed", "Windgeschwindigkeit", "WS.WindSpeed", 2);
         $this->RegisterVariableBoolean("IsRaining", "Regenstatus", "~Switch", 3);
 
         // Timer registrieren

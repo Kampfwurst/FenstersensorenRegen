@@ -2,7 +2,7 @@
     "id": "{8A5563F3-9D4B-4F20-B243-3E8A9B8E2F76}",
     "name": "WindowSensor",
     "type": 3,
-    "vendor": "YourName",
+    "vendor": "Christoph Boss",
     "aliases": ["Window Sensor"],
     "parentRequirements": [],
     "childRequirements": [],
